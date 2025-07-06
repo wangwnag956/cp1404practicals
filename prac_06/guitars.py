@@ -13,3 +13,18 @@ def main():
 
     else:
         print("No guitars entered.")
+
+def get_guitars_from_user():
+    guitars = []
+    name = input("Name: ")
+    while name:
+        year = int(input("Year: "))
+        cost = float(input("Cost: $"))
+        new_guitar = Guitar(name, year, cost)
+        guitars.append(new_guitar)
+        print(f"{new_guitar} added.\n")
+        name = input("Name: ")
+   return guitars
+
+if __name__ == "__main__":
+    main()
