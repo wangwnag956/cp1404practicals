@@ -29,3 +29,4 @@ Regularly schedule progress checks
 Documentation
 Maintain a development log to record decision-making
 Document known issues and limitations.
+   
