@@ -1,6 +1,6 @@
 
 
-from car import Car
+from car import car
 
 def display_menu():
     print("Menu:\nd) drive\nr) refuel\nq) quit")
@@ -12,7 +12,7 @@ def get_menu_choice():
 def main():
     print("Let's drive!")
     car_name = input("Enter your car name: ")
-    car = Car(car_name)
+    car = car(car_name)
 
     print(car)
     display_menu()
