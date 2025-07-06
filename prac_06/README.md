@@ -17,4 +17,4 @@ I can no longer sacrifice time to speed up the completion of the exercises. Some
 
 What is one request you have or change you suggest for this subject and/or your IT degree overall?
 
-I hope there can be more industry lectures or internship opportunities so that the course content can be linked to actual IT job positions and requirements.
+I hope there can be more industry lectures or internship opportunities so that the course content can be linked to actual IT job positions and requirements
