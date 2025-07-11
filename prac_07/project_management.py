@@ -39,3 +39,23 @@ def filter_projects_by_date(projects, date_str):
     filtered = [p for p in projects if p.start_date > filter_date]
     for project in sorted(filtered, key=lambda x: x.start_date):
         print(project.display_string())
+
+def add_project():
+    print("Let's add a new project")
+    name = input("Name: ")
+    date_str = input("Start date (dd/mm/yyyy): ")
+    try:
+        start_date = datetime.datetime.strptime(date_str, DATE_FORMAT).date()
+    except ValueError:
+        print("Invalid date format. Project not added.")
+        return None
+
+    try:
+        priority = int(input("Priority: "))
+        cost_estimate = float(input("Cost estimate: $"))
+        completion_percentage = int(input("Percent complete: "))
+    except ValueError:
+        print("Invalid numeric input. Project not added.")
+        return None
+
+    return Project(name, start_date, priority, cost_estimate, completion_percentage)
