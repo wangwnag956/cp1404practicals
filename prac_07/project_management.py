@@ -23,7 +23,6 @@ def save_projects(filename, projects):
         for project in projects:
             print(str(project), file=file)
 
-
 def display_projects(projects):
     incomplete = [p for p in projects if not p.is_complete()]
     completed = [p for p in projects if p.is_complete()]
