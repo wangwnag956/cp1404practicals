@@ -41,6 +41,7 @@ def filter_projects_by_date(projects, date_str):
         print(project.display_string())
 
 def add_project():
+    #Responsible for obtaining user input.
     print("Let's add a new project")
     name = input("Name: ")
     date_str = input("Start date (dd/mm/yyyy): ")
@@ -59,3 +60,20 @@ def add_project():
         return None
 
     return Project(name, start_date, priority, cost_estimate, completion_percentage)
+
+
+def update_project(projects):
+    for i, project in enumerate(projects):
+        print(f"{i} {project.display_string()}")
+    try:
+        index = int(input("Project choice: "))
+        project = projects[index]
+        print(project.display_string())
+        percent_str = input("New Percentage: ")
+        if percent_str:
+            project.completion_percentage = int(percent_str)
+        priority_str = input("New Priority: ")
+        if priority_str:
+            project.priority = int(priority_str)
+    except (ValueError, IndexError):
+        print("Invalid selection.")
