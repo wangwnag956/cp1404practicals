@@ -28,14 +28,15 @@ def add_guitars():
     """Prompt user to add new guitars."""
     new_guitars = []
     print("Enter your new guitars (press enter twice to finish):")
-    while True:
-        name = input("Name: ")
-        if not name:
-            break
+    
+    name = input("Name: ")
+    while name != "":
         year = int(input("Year: "))
         cost = float(input("Cost: "))
         new_guitar = Guitar(name, year, cost)
         new_guitars.append(new_guitar)
+        name = input("Name: ")
+        
     return new_guitars
 
 def main():
