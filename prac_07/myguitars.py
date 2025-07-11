@@ -35,8 +35,7 @@ def add_guitars():
         cost = float(input("Cost: "))
         new_guitar = Guitar(name, year, cost)
         new_guitars.append(new_guitar)
-        name = input("Name: ")
-        
+        name = input("Name: ")  
     return new_guitars
 
 def main():
