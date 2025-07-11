@@ -45,3 +45,16 @@ def main():
 
     print("These are the guitars loaded from file:")
     display_guitars(guitars)
+
+    new_guitars = add_guitars()
+    guitars.extend(new_guitars)
+
+    guitars.sort()
+    print("\nSorted guitars (oldest to newest):")
+    display_guitars(guitars)
+
+    save_guitars(FILENAME, guitars)
+    print(f"\nAll guitars saved to {FILENAME}.")
+
+if __name__ == '__main__':
+    main()
