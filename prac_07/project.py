@@ -20,3 +20,16 @@ class Project:
     def is_complete(self):
         """Check if the project is complete (100%)."""
         return self.completion_percentage == 100
+        
+ def __str__(self):
+        """File/tab-separated string for saving."""
+        return (f"{self.name}\t"
+                f"{self.start_date.strftime(DATE_FORMAT)}\t"
+                f"{self.priority}\t"
+                f"{self.cost_estimate}\t"
+                f"{self.completion_percentage}")
+
+    def display_string(self):
+        """User-friendly string for display."""
+        return (f"{self.name}, start: {self.start_date.strftime(DATE_FORMAT)}, priority {self.priority}, "
+                f"estimate: ${self.cost_estimate:.2f}, completion: {self.completion_percentage}%")
