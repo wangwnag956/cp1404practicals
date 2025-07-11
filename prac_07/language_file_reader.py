@@ -19,6 +19,7 @@ def main():
     # 'Consume' the first line (header) - we don't need its contents
     in_file.readline()
     # All other lines are language data
+    
     for line in in_file:
         # print(repr(line))  # debugging
         # Strip newline from end and split it into parts (CSV)
