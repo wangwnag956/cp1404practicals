@@ -77,3 +77,54 @@ def update_project(projects):
             project.priority = int(priority_str)
     except (ValueError, IndexError):
         print("Invalid selection.")
+
+
+def main():
+    print("Welcome to Pythonic Project Management")
+    projects = load_projects(DEFAULT_FILE)
+    print(f"Loaded {len(projects)} projects from {DEFAULT_FILE}")
+
+    MENU = (
+        "- (L)oad projects\n"
+        "- (S)ave projects\n"
+        "- (D)isplay projects\n"
+        "- (F)ilter projects by date\n"
+        "- (A)dd new project\n"
+        "- (U)pdate project\n"
+        "- (Q)uit"
+    )
+
+    choice = input_menu_choice(MENU)
+    while choice != "q":
+        if choice == "l":
+            filename = input("Filename to load: ")
+            try:
+                projects = load_projects(filename)
+                print(f"Loaded {len(projects)} projects from {filename}")
+            except FileNotFoundError:
+                print(f"File '{filename}' not found.")
+
+        elif choice == "s":
+            filename = input("Filename to save to: ")
+            save_projects(filename, projects)
+            print(f"Saved {len(projects)} projects to {filename}")
+        elif choice == "d":
+            display_projects(projects)
+        elif choice == "f":
+            date_str = input("Show projects that start after date (dd/mm/yyyy): ")
+            filter_projects_by_date(projects, date_str)
+        elif choice == "a":
+            project = add_project()
+            if project:
+                projects.append(project)
+        elif choice == "u":
+            update_project(projects)
+
+        choice = input_menu_choice(MENU)
+
+
+    save = input(f"Would you like to save to {DEFAULT_FILE}? (y/n): ").strip().lower()
+    if save == 'y':
+        save_projects(DEFAULT_FILE, projects)
+        print(f"Saved projects to {DEFAULT_FILE}.")
+    print("Thank you for using custom-built project management software.")
