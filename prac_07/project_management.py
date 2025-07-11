@@ -128,3 +128,8 @@ def main():
         save_projects(DEFAULT_FILE, projects)
         print(f"Saved projects to {DEFAULT_FILE}.")
     print("Thank you for using custom-built project management software.")
+
+
+def input_menu_choice(menu):
+    print(menu)
+    return input(">>> ").strip().lower()
