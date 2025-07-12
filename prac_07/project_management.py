@@ -1,7 +1,7 @@
 import datetime
 from project import Project
 
-DATE_FORMAT = "%d/%m/%Y"
+DATE_FORMAT = "dd/mm/YY"
 DEFAULT_FILE = "projects.txt"
 
 def load_projects(filename):
