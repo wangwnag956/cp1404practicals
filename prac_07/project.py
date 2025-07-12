@@ -28,7 +28,7 @@ class Project:
                 f"{self.priority}\t"
                 f"{self.cost_estimate}\t"
                 f"{self.completion_percentage}")
-
+  
     def display_string(self):
         """User-friendly string for display."""
         return (f"{self.name}, start: {self.start_date.strftime(DATE_FORMAT)}, priority {self.priority}, "
