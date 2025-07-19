@@ -5,6 +5,7 @@ Dynamically create buttons based on content of dictionary
 from kivy.app import App
 from kivy.lang import Builder
 
+
 KV = '''
 BoxLayout:
     orientation: 'vertical'
