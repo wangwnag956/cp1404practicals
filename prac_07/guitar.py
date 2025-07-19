@@ -20,3 +20,4 @@ class Guitar:
     def __lt__(self, other):
         """Less than comparison for sorting by year (older first)."""
         return self.year < other.year
+ 

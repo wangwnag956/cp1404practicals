@@ -1,7 +1,7 @@
 import datetime
 from project import Project
 
-DATE_FORMAT = "%d/%m/%Y"
+DATE_FORMAT = "dd/mm/YY"
 DEFAULT_FILE = "projects.txt"
 
 def load_projects(filename):
@@ -22,7 +22,6 @@ def save_projects(filename, projects):
         print("Name\tStart Date\tPriority\tCost Estimate\tCompletion Percentage", file=file)
         for project in projects:
             print(str(project), file=file)
-
 
 def display_projects(projects):
     incomplete = [p for p in projects if not p.is_complete()]

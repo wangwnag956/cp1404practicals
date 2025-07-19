@@ -1,8 +1,7 @@
 """
-CP1404/CP5632 Practical
-File and class example - opens/reads a file, stores in objects of custom class
-(contains multiple versions for demonstration: using csv and namedtuple)
+CP1404
 """
+
 
 import csv
 from collections import namedtuple
@@ -87,3 +86,4 @@ def using_csv_namedtuple():
         print(repr(language))
 
 # using_csv_namedtuple()
+ 
