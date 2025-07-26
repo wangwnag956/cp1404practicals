@@ -2,6 +2,7 @@ from prac_09.taxi import Taxi
 from prac_09.silver_service_taxi import SilverServiceTaxi
 
 def display_taxis(taxis):
+    #Display the list of taxis along with their numbers
     print("Taxis available:")
     for i, taxi in enumerate(taxis):
         print(f"{i} - {taxi}")
@@ -11,7 +12,7 @@ def run_simulator(taxis, current_taxi=None, total_bill=0.0):
     choice = input(">>> ").lower()
 
     if choice == 'q':
-        # End recursion, exit program
+        # The user chooses to exit. Print the total bill and all taxi information, and terminate the recursion.
         print(f"Total trip cost: ${total_bill:.2f}")
         print("Taxis are now:")
         display_taxis(taxis)
@@ -30,6 +31,7 @@ def run_simulator(taxis, current_taxi=None, total_bill=0.0):
             print("Invalid taxi choice")
 
     elif choice == 'd':
+        # User selects to take a taxi
         if current_taxi is None:
             print("You need to choose a taxi before you can drive")
             print(f"Bill to date: ${total_bill:.2f}")
@@ -49,8 +51,21 @@ def run_simulator(taxis, current_taxi=None, total_bill=0.0):
                 print("Invalid distance")
 
     else:
+        # Handling of Illegal Options
         print("Invalid option")
         print(f"Bill to date: ${total_bill:.2f}")
 
 # Make recursive calls to itself and pass the updated state
  run_simulator(taxis, current_taxi, total_bill)
+
+def main():
+    taxis = [
+        Taxi("Prius", 100),
+        SilverServiceTaxi("Limo", 100, 2),
+        SilverServiceTaxi("Hummer", 200, 4)
+    ]
+    print("Let's drive!")
+    run_simulator(taxis)
+
+if __name__ == '__main__':
+    main()
