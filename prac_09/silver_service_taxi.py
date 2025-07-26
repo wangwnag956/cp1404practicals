@@ -13,3 +13,8 @@ class SilverServiceTaxi(Taxi):
     def __str__(self):
         """Return a string representation, including the flagfall."""
         return f"{super().__str__()} plus flagfall of ${self.flagfall:.2f}"
+
+ def get_fare(self):
+        """Return the fare, including flagfall and distance-based fare."""
+        base_fare = super().get_fare()
+        return base_fare + self.flagfall
