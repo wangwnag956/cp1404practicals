@@ -18,3 +18,18 @@ def is_long_word(word, length=5):
     True
     """
     return len(word) >= length
+
+def format_sentence(phrase):
+    """
+    Format a phrase as a sentence: capitalized first letter, ending with a single full stop.
+    >>> format_sentence("hello")
+    'Hello.'
+    >>> format_sentence("It is an ex parrot.")
+    'It is an ex parrot.'
+    >>> format_sentence("goodbye!")
+    'Goodbye!.'
+    """
+    phrase = phrase.strip()
+    if not phrase.endswith('.'):
+        phrase += '.'
+    return phrase[0].upper() + phrase[1:]
