@@ -33,3 +33,27 @@ def format_sentence(phrase):
     if not phrase.endswith('.'):
         phrase += '.'
     return phrase[0].upper() + phrase[1:]
+
+def run_tests():
+    """Run the tests on the functions."""
+    # assert test with no message - used to see if the function works properly
+    assert repeat_string("Python", 1) == "Python"
+    assert repeat_string("hi", 2) == "hi hi"
+
+    # Check if Car sets odometer correctly
+    car = Car()
+    assert car._odometer == 0, "Car does not set odometer correctly"
+
+    # Check Car sets fuel correctly with default
+    default_car = Car()
+    assert default_car.fuel == 0, "Default fuel is not set correctly"
+
+    # Check Car sets fuel correctly with given value
+    fuelled_car = Car(fuel=10)
+    assert fuelled_car.fuel == 10, "Fuel is not set correctly when passed in"
+
+
+run_tests()
+
+# Run doctests
+doctest.testmod()
